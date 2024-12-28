@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Js Practicing</title>
+
+    <script>
+        function firstFun () {
+            document.getElementById('bgColor').style.backgroundColor = 'skyblue';
+            document.getElementById('bgColor').style.color = 'white';
+            document.getElementById('bgColor').style.fontWeight = 'bold';
+            document.getElementById('bgColor').style.fontSize = '50px';
+            console.log('Yes! the text background color is changed');
+        }
+        // alert('Hello Javascript')
+    </script>
+</head>
+<body>
+    <h1>What can Javascript do???</h1>
+    <h2 id="demo">If you want to change this text. Click the below button.</h2>
+
+    <button onclick="document.getElementById('demo').innerHTML = 'Hello Javascript!'">Click me to change the text</button> <br> <br>
+
+    <h2>Javascript can change attribute</h2>
+    <button onclick="document.getElementById('bulb').src = 'images/pic_bulbon.gif'">Light On</button>
+    <img id="bulb" src="images/pic_bulboff.gif" alt="bulb">
+    <button onclick="document.getElementById('bulb').src = 'images/pic_bulboff.gif'">Light Off</button> <br> <br>
+
+    <h2 id="styleChange">Javascript can change style</h2>
+    <button onclick="document.getElementById('styleChange').style.color = 'red'">Click to change style</button> <br> <br>
+
+    <h2 id="bgColor">Javascript on head section</h2>
+    <button onclick="firstFun()">Click here</button>
+
+    <h2>Javascript Comments // and /* */</h2>
+</body>
+</html>
