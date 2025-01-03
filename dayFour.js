@@ -8,7 +8,7 @@ for (i = 1; i <= 10; i++) {
 let countWhile = 1;
 while (countWhile <= 15) {
     console.log('while loop: ' + countWhile);
-    countWhile++
+    countWhile++;
 } 
 
 // do while loop 
@@ -16,12 +16,12 @@ while (countWhile <= 15) {
 let countDoWhile = 16;
 do{
     console.log('do while loop: ' + countDoWhile);
-    countDoWhile++
+    countDoWhile++;
 } while(countDoWhile <= 25)
 
 
 // for in loop
-let person = {name: 'Mahfuz', age: 25,}
+let person = {name: 'Mahfuz', age: 25}
 for (let key in person) {
     console.log(key + ' : ' + person[key]);
 }
