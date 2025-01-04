@@ -12,8 +12,12 @@
             document.getElementById('bgColor').style.fontWeight = 'bold';
             document.getElementById('bgColor').style.fontSize = '50px';
             console.log('Yes! the text background color is changed');
+            const months = ["Jan", "Feb", "Mar", "Apr"];
+            const spliced = months.toSpliced(0, 1);
+            document.getElementById('spliced').innerHTML = spliced;
         }
         // alert('Hello Javascript')
+        
     </script>
 </head>
 <body>
@@ -36,6 +40,8 @@
     <h2>Javascript Comments // and /* */</h2> <br> <br>
 
     <h2>You can declare many variables in one statement. like..... let person = "John Doe", carName = "Volvo", price = 200;</h2>
+    <p style="color: rgb(225, 247, 239); font-size: 25px; background-color: rgba(62, 247, 247, 0.932); font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eligendi tempora doloremque totam officia eos architecto hic rem at laborum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus placeat labore eligendi atque libero dolores quidem quaerat quisquam dignissimos omnis sunt nihil tempore quibusdam commodi aperiam, consequatur magni inventore corporis voluptas nemo sapiente! Est voluptate eveniet soluta recusandae nisi dolorem.</p>
+    <h1 id="spliced"></h1>
 
 </body>
 </html>
