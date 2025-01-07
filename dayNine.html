@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Data Fetch Example</title>
+  <style>
+    #loader {
+      display: none;
+      font-size: 18px;
+      color: blue;
+    }
+    #posts {
+      margin-top: 20px;
+    }
+    .post {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #search {
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 500px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .pagination {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .pagination button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .pagination button.disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>Posts</h1>
+  <input type="text" id="search" placeholder="Search posts by title..." />
+  <div id="loader">Loading...</div>
+  <div id="posts"></div>
+  <div class="pagination" id="pagination"></div>
+
+  <script src="dayNineProject.js"></script>
+</body>
+</html>
