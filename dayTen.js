@@ -38,3 +38,4 @@ const countVowels = (word) => {
     return console.log(vowles.length);
 }
 countVowels('aeiou')
+
