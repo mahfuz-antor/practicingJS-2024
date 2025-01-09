@@ -1,3 +1,4 @@
+// js problem solving
 // finding the longest word 
 
 const findLongWord = (str) => {
@@ -9,5 +10,13 @@ const findLongWord = (str) => {
     })
 }
 
-const cheking = findLongWord('I love Bangladesh from other country')
+const cheking = findLongWord('I am learning Programming to become a programmer')
 console.log(cheking);
+
+// random number generator
+const ranNumber = (min, max) => {
+    const genNum = Math.floor(Math.random() * (max - min + 1) + min)
+    console.log(genNum);
+}
+
+ranNumber(10, 20)
