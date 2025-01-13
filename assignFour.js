@@ -49,8 +49,75 @@ console.log(deleteInvalids(checkingArr));
 
 // Problem no: 4
 function password(obj) {
-    console.log(obj);
+    if(obj.name && obj.birthYear && obj.siteName !== undefined) {
+        if(obj.birthYear >= 1000 && obj.birthYear <= 9999) {
+                    // get site name value
+    const siteNameData = obj.siteName;
+    // get the first letter value
+    const getZeroInd = obj.siteName[0];
+    // uppercase the first letter
+    const createCapLetter = obj.siteName[0].toUpperCase();
+    // create the site name
+    const capSiteName = siteNameData.replace(getZeroInd, createCapLetter)
+    // creating the password
+    const createPassword = capSiteName + '#' + obj.name + '@' + obj.birthYear;
+    return createPassword;
+        } else {
+            return 'Invalid';
+        }
+    } else {
+        return 'Invalid';
+    }
+
 }
 
-const obj = { name: "kolimuddin" , birthYear: 1999 , siteName: "google" }
-password(obj)
+const obj = { name: "kolimuddin" , birthYear: 1980 , siteName: "google" }
+console.log(password(obj));
+
+// problem no: 5
+function monthlySavings(arr, livingCost) {
+    // validate array and livingCost
+    const checkArr = Array.isArray(arr)
+    const checkLCost = typeof livingCost === 'number'
+    if(checkArr === true && checkLCost === true) {
+        // sum of total income
+    const totalIncome =  arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+
+    // getting tax
+    let taxValue = [];
+    for(let i of arr ) {
+        if(i >= 3000) {
+            const calTax = (20 / 100) * i;
+            taxValue.push(calTax);
+        }
+    }
+    const totalTax = taxValue.reduce((acc, current) => acc + current, 0)
+    
+    // calculate total savings
+    const totalSavings = totalIncome - (totalTax + livingCost)
+    if(totalSavings < 0) {
+        return 'earn more!'
+    } else {
+        return totalSavings;
+    }
+    
+    } else {
+        return 'invalid input';
+    }    
+}
+// set the erning money and costing
+const getMoney = [ 1000 , 2000 , 2500 ]
+const livingCost = 5000;
+// calling the function
+console.log(monthlySavings(getMoney, livingCost));
+
+
+function percentage (percen, total) {
+    const result = (percen / 100) * total
+    console.log(result);
+}
+
+const percen = 20;
+const total = 8500;
+
+// percentage(percen, total)
