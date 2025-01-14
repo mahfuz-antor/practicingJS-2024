@@ -17,6 +17,15 @@
             document.getElementById('spliced').innerHTML = spliced;
         }
         // alert('Hello Javascript')
+
+        // for hidden
+        function divHide () {
+            document.getElementById('parentHide').style.display = 'none'
+        }
+        function divShow () {
+            document.getElementById('parentHide').style.display = 'block'
+            // document.getElementById('parentShow').style.display = 'block'
+        }
         
     </script>
     <script src="https://kit.fontawesome.com/c27587c69c.js" crossorigin="anonymous"></script>
@@ -46,6 +55,21 @@
     <h2>You can declare many variables in one statement. like..... let person = "John Doe", carName = "Volvo", price = 200;</h2>
     <p style="color: #e1f7ef; font-size: 25px; background-color: rgba(62, 247, 247, 0.932); font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eligendi tempora doloremque totam officia eos architecto hic rem at laborum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus placeat labore eligendi atque libero dolores quidem quaerat quisquam dignissimos omnis sunt nihil tempore quibusdam commodi aperiam, consequatur magni inventore corporis voluptas nemo sapiente! Est voluptate eveniet soluta recusandae nisi dolorem.</p>
     <h1 id="spliced"></h1>
+    <div class="twoDiv" style="display: flex; justify-content: center;">
+        <div class="parentDiv" id="parentHide" style="width: 500px; height: 300px; padding: 20px;">
+            <h2 class="heading2">This is heading part</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum optio asperiores quia ipsum non nesciunt a error deserunt quos provident.</p>
+            <button onclick="divHide()">remove</button>
+        </div>
+    
+        <br>
+    
+        <div class="parentDiv" id="parentShow" style="width: 500px; height: 300px; padding: 20px;">
+            <h2 class="heading2">This is Reset part</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum optio asperiores quia ipsum non nesciunt a error deserunt quos provident.</p>
+            <button onclick="divShow()">Reset</button>
+        </div>
+    </div>
 
 </body>
 </html>
