@@ -10,7 +10,8 @@ document.getElementById('update-btn').addEventListener('click', function(){
 
     const getName = document.getElementById('name').value.trim();
     const getEmail = document.getElementById('email').value.trim().toLowerCase();
-    const getpassword = document.getElementById('password').value.trim()
+    const getpassword = document.getElementById('password').value.trim();
+    let setLocalData =  localStorage.setItem('signUpData', JSON.stringify(signUpData))
     console.log(getName, getEmail, getpassword);
     const setData = {
         name: getName, email: getEmail, password: getpassword
@@ -27,17 +28,21 @@ document.getElementById('update-btn').addEventListener('click', function(){
    if(signUpData.length > 0) {
 
     if(emailExist) {
-        alert('Already used this mail')
+        document.getElementById('showAccountInfo').innerText = 'Already used this mail!'
+        alert('Already used this mail');
     } else {
         signUpData.push(setData)
+        setLocalData;
+        document.getElementById('showAccountInfo').innerText = 'Account created Successfull!';
     }
 } else {
     
      signUpData.push(setData)
+     setLocalData;
+     document.getElementById('showAccountInfo').innerText = 'Account created Successfull!';
    }
+//    document.getElementById('showAccountInfo').innerText = 'Account created Successfull!';
 
-   console.log(signUpData);
-   localStorage.setItem('signUpData', JSON.stringify(signUpData))
 })
 
 // login part start
@@ -49,6 +54,7 @@ document.getElementById('loginBtn').addEventListener('click', async function() {
     const getLogPass = document.getElementById('loginPass').value.trim();
     // console.log(getLogEamil, ' ',  getLogPass);
     let storeData =  await getStoredUserData()
+    console.log('local Data',storeData);
 
     const getEamil = storeData.some(user => user.email === getLogEamil);
     const getPass = storeData.some(user => user.password === getLogPass)
@@ -57,7 +63,9 @@ document.getElementById('loginBtn').addEventListener('click', async function() {
     
     if(getEamil && getPass) {
         console.log('login success');
+        document.getElementById('showAccountInfo').innerText = 'Login Successfull!'
     } else {
+        document.getElementById('showAccountInfo').innerText = 'Invalid email and password!'
         console.log('invalid email and password');
     }
     } catch (error) {
